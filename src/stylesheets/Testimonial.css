@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  margin: 20px auto;
+  max-width: 1024px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.testimonial {
+  width: 45%;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: lightgray 1px solid;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+cite,
+cite span {
+  display: block;
+}
+
+cite span {
+  font-weight: bold;
+}
