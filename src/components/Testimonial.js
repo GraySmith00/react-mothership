@@ -1,5 +1,5 @@
-import React from "react";
-import "../stylesheets/Testimonial.css";
+import React from 'react';
+import '../stylesheets/Testimonial.css';
 
 class Testimonial extends React.Component {
   quote = React.createRef();
@@ -7,7 +7,7 @@ class Testimonial extends React.Component {
   title = React.createRef();
   company = React.createRef();
 
-  handleSubmit = e => {
+  handleChange = e => {
     e.preventDefault();
 
     const testimonial = {
@@ -24,9 +24,15 @@ class Testimonial extends React.Component {
     return (
       <div className="wrapper">
         <section className="testimonial-admin testimonial">
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <label htmlFor="quote">Quote</label>
-            <textarea ref={this.quote} name="quote" id="quote" rows="4" />
+            <textarea
+              ref={this.quote}
+              name="quote"
+              id="quote"
+              rows="4"
+              onKeyUp={this.handleChange}
+            />
             <label htmlFor="source">Source</label>
             <input
               ref={this.source}
@@ -34,6 +40,7 @@ class Testimonial extends React.Component {
               name="source"
               id="source"
               defaultValue=""
+              onKeyUp={this.handleChange}
             />
             <label htmlFor="title">Title</label>
             <input
@@ -42,6 +49,7 @@ class Testimonial extends React.Component {
               name="title"
               id="title"
               defaultValue=""
+              onKeyUp={this.handleChange}
             />
             <label htmlFor="company">Company</label>
             <input
@@ -50,8 +58,9 @@ class Testimonial extends React.Component {
               name="company"
               id="company"
               defaultValue=""
+              onKeyUp={this.handleChange}
             />
-            <button type="submit">Submit</button>
+            {/* <button type="submit">Submit</button> */}
           </form>
         </section>
         <section className="testimonial-public testimonial">
