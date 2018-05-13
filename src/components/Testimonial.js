@@ -19,7 +19,7 @@ class Testimonial extends React.Component {
 
     console.log(testimonial);
 
-    // this.props.createTestimonial(testimonial);
+    this.props.createTestimonial(testimonial);
   };
 
   render() {
