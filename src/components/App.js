@@ -3,13 +3,13 @@ import '../stylesheets/App.css';
 import Testimonial from './Testimonial';
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-        <Testimonial />
-      </div>
-    );
-  }
+	render() {
+		return (
+			<React.Fragment>
+				<Testimonial />
+			</React.Fragment>
+		);
+	}
 }
 
 export default App;
