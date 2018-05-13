@@ -1,21 +1,24 @@
 import React from 'react';
 import '../stylesheets/Testimonial.css';
+import DisplayTestimonial from './DisplayTestimonial';
 
 class Testimonial extends React.Component {
-  quote = React.createRef();
-  source = React.createRef();
-  title = React.createRef();
-  company = React.createRef();
+  quoteRef = React.createRef();
+  sourceRef = React.createRef();
+  titleRef = React.createRef();
+  companyRef = React.createRef();
 
   handleChange = e => {
     e.preventDefault();
 
     const testimonial = {
-      quote: this.quote.current.value,
-      source: this.source.current.value,
-      title: this.title.current.value,
-      company: this.company.current.value
+      quote: this.quoteRef.current.value,
+      source: this.sourceRef.current.value,
+      title: this.titleRef.current.value,
+      company: this.companyRef.current.value
     };
+
+    console.log(testimonial);
 
     this.props.createTestimonial(testimonial);
   };
@@ -27,7 +30,7 @@ class Testimonial extends React.Component {
           <form>
             <label htmlFor="quote">Quote</label>
             <textarea
-              ref={this.quote}
+              ref={this.quoteRef}
               name="quote"
               id="quote"
               rows="4"
@@ -35,7 +38,7 @@ class Testimonial extends React.Component {
             />
             <label htmlFor="source">Source</label>
             <input
-              ref={this.source}
+              ref={this.sourceRef}
               type="text"
               name="source"
               id="source"
@@ -44,7 +47,7 @@ class Testimonial extends React.Component {
             />
             <label htmlFor="title">Title</label>
             <input
-              ref={this.title}
+              ref={this.titleRef}
               type="text"
               name="title"
               id="title"
@@ -53,7 +56,7 @@ class Testimonial extends React.Component {
             />
             <label htmlFor="company">Company</label>
             <input
-              ref={this.company}
+              ref={this.companyRef}
               type="text"
               name="company"
               id="company"
@@ -63,16 +66,7 @@ class Testimonial extends React.Component {
             {/* <button type="submit">Submit</button> */}
           </form>
         </section>
-        <section className="testimonial-public testimonial">
-          <blockquote>
-            {this.props.testimonial.quote}
-            <cite>
-              <span className="source">{this.props.testimonial.source}</span>
-              <span className="title">{this.props.testimonial.title}</span>
-              <span className="company">{this.props.testimonial.company}</span>
-            </cite>
-          </blockquote>
-        </section>
+        <DisplayTestimonial testimonial={this.props.testimonial} />
       </div>
     );
   }
