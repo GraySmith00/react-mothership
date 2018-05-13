@@ -1,5 +1,6 @@
 import React from 'react';
 import '../stylesheets/Testimonial.css';
+import DisplayTestimonial from './DisplayTestimonial';
 
 class Testimonial extends React.Component {
   quoteRef = React.createRef();
@@ -65,16 +66,7 @@ class Testimonial extends React.Component {
             {/* <button type="submit">Submit</button> */}
           </form>
         </section>
-        <section className="testimonial-public testimonial">
-          <blockquote>
-            {this.props.testimonial.quote}
-            <cite>
-              <span className="source">{this.props.testimonial.source}</span>
-              <span className="title">{this.props.testimonial.title}</span>
-              <span className="company">{this.props.testimonial.company}</span>
-            </cite>
-          </blockquote>
-        </section>
+        <DisplayTestimonial testimonial={this.props.testimonial} />
       </div>
     );
   }
