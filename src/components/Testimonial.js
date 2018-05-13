@@ -10,14 +10,14 @@ class Testimonial extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    let testimonial = {
+    const testimonial = {
       quote: this.quote.current.value,
       source: this.source.current.value,
       title: this.title.current.value,
       company: this.company.current.value
     };
 
-    console.log(testimonial);
+    this.props.createTestimonial(testimonial);
   };
 
   render() {
@@ -56,15 +56,11 @@ class Testimonial extends React.Component {
         </section>
         <section className="testimonial-public testimonial">
           <blockquote>
-            Having collaborated with numerous developers over the years, Secret
-            Stache has set the bar for what a working relationship with
-            programmers should look like. Their understanding of the value
-            behind creativity is a welcome departure from most dev
-            relationships, and the quality of code is as good as it gets.
+            {this.props.testimonial.quote}
             <cite>
-              <span className="source">Some Rando</span>
-              <span className="title">The Director of Awesomeness</span>
-              <span className="company">Secret Stache Media</span>
+              <span className="source">{this.props.testimonial.source}</span>
+              <span className="title">{this.props.testimonial.title}</span>
+              <span className="company">{this.props.testimonial.company}</span>
             </cite>
           </blockquote>
         </section>
