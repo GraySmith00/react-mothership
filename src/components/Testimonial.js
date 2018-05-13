@@ -1,6 +1,6 @@
-import React from 'react';
-import '../stylesheets/Testimonial.css';
-import DisplayTestimonial from './DisplayTestimonial';
+import React from "react";
+import "../stylesheets/Testimonial.css";
+import DisplayTestimonial from "./DisplayTestimonial";
 
 class Testimonial extends React.Component {
   quoteRef = React.createRef();
@@ -28,41 +28,49 @@ class Testimonial extends React.Component {
       <div className="wrapper">
         <section className="testimonial-admin testimonial">
           <form>
-            <label htmlFor="quote">Quote</label>
-            <textarea
-              ref={this.quoteRef}
-              name="quote"
-              id="quote"
-              rows="4"
-              onKeyUp={this.handleChange}
-            />
-            <label htmlFor="source">Source</label>
-            <input
-              ref={this.sourceRef}
-              type="text"
-              name="source"
-              id="source"
-              defaultValue=""
-              onKeyUp={this.handleChange}
-            />
-            <label htmlFor="title">Title</label>
-            <input
-              ref={this.titleRef}
-              type="text"
-              name="title"
-              id="title"
-              defaultValue=""
-              onKeyUp={this.handleChange}
-            />
-            <label htmlFor="company">Company</label>
-            <input
-              ref={this.companyRef}
-              type="text"
-              name="company"
-              id="company"
-              defaultValue=""
-              onKeyUp={this.handleChange}
-            />
+            <div>
+              <label htmlFor="quote">Quote</label>
+              <textarea
+                ref={this.quoteRef}
+                name="quote"
+                id="quote"
+                rows="4"
+                onKeyUp={this.handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="source">Source</label>
+              <input
+                ref={this.sourceRef}
+                type="text"
+                name="source"
+                id="source"
+                defaultValue=""
+                onKeyUp={this.handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="title">Title</label>
+              <input
+                ref={this.titleRef}
+                type="text"
+                name="title"
+                id="title"
+                defaultValue=""
+                onKeyUp={this.handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="company">Company</label>
+              <input
+                ref={this.companyRef}
+                type="text"
+                name="company"
+                id="company"
+                defaultValue=""
+                onKeyUp={this.handleChange}
+              />
+            </div>
             {/* <button type="submit">Submit</button> */}
           </form>
         </section>
