@@ -10,10 +10,14 @@ class Testimonial extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    console.log(this.quote.current.value);
-    console.log(this.source.current.value);
-    console.log(this.title.current.value);
-    console.log(this.company.current.value);
+    let testimonial = {
+      quote: this.quote.current.value,
+      source: this.source.current.value,
+      title: this.title.current.value,
+      company: this.company.current.value
+    };
+
+    console.log(testimonial);
   };
 
   render() {
